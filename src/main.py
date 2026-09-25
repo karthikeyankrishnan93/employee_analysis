@@ -1,6 +1,12 @@
-import logging
 import sys
 import os
+import logging
+
+logging.basicConfig(level=logging.CRITICAL)
+logging.info = lambda msg, *args, **kwargs: print(f"[INFO] {msg}")
+logging.error = lambda msg, *args, **kwargs: print(f"[ERROR] {msg}")
+logging.warning = lambda msg, *args, **kwargs: print(f"[WARNING] {msg}")
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import pandas as pd
 import numpy as np
@@ -27,7 +33,7 @@ def main():
                                 'department', 'designation', 'salary', 'joining_date', 
                                 'experience', 'performance_score', 'city', 'status', 'department_id']).to_csv(raw_csv_path, index=False)
 
-    logging.info("Employee Pipeline Framework - Main environment varaiables loaded successfully.")
+    print("[INFO] Employee Pipeline Framework - Main environment variables loaded successfully.")
 
     raw_df = DataLoader(raw_csv_path).load_csv()
     cleaned_df = DataCleaner(raw_df).clean_and_preprocess()
@@ -44,10 +50,8 @@ def main():
     ChartSuite(final_merged_df).generate_all_plots()
     ReportGenerator(final_merged_df, metric_summary_df, api_metadata).generate_production_deliverables()
 
-    logging.info("Pipeline execution finished successfully.")
-    logging.info("Data cleaning and processing completed.")
-    logging.info("Success!")
-    logging.info("Process completed without errors.")
+    print("Pipeline execution finished successfully.")
+    print("Process completed without errors.")
 
 if __name__ == "__main__":
     main()
