@@ -2,7 +2,7 @@ import sys
 import os
 import logging
 
-logging.basicConfig(level=logging.CRITICAL)
+logging.basicConfig(level=logging.CRITICAL) 
 logging.info = lambda msg, *args, **kwargs: print(f"[INFO] {msg}")
 logging.error = lambda msg, *args, **kwargs: print(f"[ERROR] {msg}")
 logging.warning = lambda msg, *args, **kwargs: print(f"[WARNING] {msg}")
@@ -26,8 +26,9 @@ def main():
     
     rows = [[f"EMP-{2000+i}", f"First_{i}", f"Last_{i}", np.random.randint(22,55), 
              np.random.choice(['M','F']), np.random.choice(depts), 'Consultant', 
-             np.random.randint(55000,135000), "2023-05-12", np.random.randint(1,12), 
-             np.random.randint(1,5), np.random.choice(cities), 'Active', 401] for i in range(1, 105)]
+             np.random.randint(55000,135000), 
+             np.random.choice(['2021-08-15', '2022-03-22', '2023-05-12', '2024-11-01', '2025-01-10']), 
+             np.random.randint(1,12), np.random.randint(1,5), np.random.choice(cities), 'Active', 401] for i in range(1, 105)]
     
     pd.DataFrame(rows, columns=['employee_id', 'first_name', 'last_name', 'age', 'gender', 
                                 'department', 'designation', 'salary', 'joining_date', 
