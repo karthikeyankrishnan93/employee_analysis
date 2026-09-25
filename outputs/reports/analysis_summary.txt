@@ -1,0 +1,37 @@
+{
+    "total_records_analyzed_capacity": 104,
+    "overall_calculated_average_salary_index": 93041.83653846153,
+    "api_connection_sync_status": "http_network_offline_mode_active",
+    "departmental_analytics_summary_breakdown": [
+        {
+            "department": "Engineering",
+            "employee_count": 17,
+            "avg_salary": 87615.17647058824,
+            "max_salary": 131886
+        },
+        {
+            "department": "HR",
+            "employee_count": 18,
+            "avg_salary": 99984.72222222222,
+            "max_salary": 133417
+        },
+        {
+            "department": "Marketing",
+            "employee_count": 23,
+            "avg_salary": 99627.95652173914,
+            "max_salary": 133942
+        },
+        {
+            "department": "Product",
+            "employee_count": 28,
+            "avg_salary": 89643.53571428571,
+            "max_salary": 130226
+        },
+        {
+            "department": "Sales",
+            "employee_count": 18,
+            "avg_salary": 88094.77777777778,
+            "max_salary": 123710
+        }
+    ]
+}
